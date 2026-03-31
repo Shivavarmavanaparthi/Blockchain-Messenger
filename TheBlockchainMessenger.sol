@@ -9,6 +9,7 @@ contract Messenger{
         owner=msg.sender;
     }
     function setAddress(address _updatedAddress) public{
+        require(msg.sender == owner, "Not owner");
         owner=_updatedAddress;
     }
     function setMessage(string memory _updatedMessage) public{
